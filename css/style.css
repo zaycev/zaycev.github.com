@@ -55,6 +55,7 @@ body{ background:#E6EAEF;}
 #contacts .facebook{ background-image: url('../images/facebook.png');}
 #contacts .twitter{ background-image: url('../images/twitter.png');}
 #contacts .github{ background-image: url('../images/github.png');}
+#contacts .quora{ background-image: url('../images/quora.png');}
 #contacts .email{ background-image: url('../images/email.png');}
-#contacts .phone{ background-image: url('../images/email.png');}
+#contacts .phone{ background-image: url('../images/phone.png');}
 #contacts .cv{ background-image: url('../images/cv.png');}
