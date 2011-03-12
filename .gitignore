@@ -1,0 +1,12 @@
+*.DS_Store
+*.log
+*.cookie
+*.swp
+*~.nib
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.obj
+*.o
+.project
+.metadata/*
