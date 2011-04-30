@@ -40,28 +40,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>48</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>31</integer>
+				<integer>41</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>0</integer>
+			<integer>269</integer>
 			<key>firstVisibleLine</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>projects.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>48</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>96</integer>
+				<integer>134</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>73</integer>
+			<integer>104</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>

@@ -68,7 +68,7 @@ body{ background:#EEEEEE}
 .zvm-container .zvm-container-section .item{
 }
 
-.zvm-contacts{ font-size:small; height:24px;}
+.zvm-contacts{ font-size:small; margin-top:16px;}
 .zvm-contacts a{
 	height:28px;
 	margin:0px 16px 0px 0px;
@@ -84,6 +84,7 @@ body{ background:#EEEEEE}
 .zvm-contacts .email{ background-image: url('../images/email.png');}
 .zvm-contacts .phone{ background-image: url('../images/phone.png');}
 .zvm-contacts .projects{ background-image: url('../images/projects.png');}
+.zvm-contacts .skype{ background-image: url('../images/skype.png');}
 .zvm-contacts .cv{ background-image: url('../images/cv.png');}
 
 footer{padding:48px 0px 24px 0px; text-align:center;}
