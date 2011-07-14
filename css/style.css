@@ -78,6 +78,7 @@ body{ background:#EEEEEE}
 	display:block;
 }
 .zvm-contacts .facebook{ background-image: url('../images/facebook.png');}
+.zvm-contacts .google{ background-image: url('../images/google.png');}
 .zvm-contacts .twitter{ background-image: url('../images/twitter.png');}
 .zvm-contacts .github{ background-image: url('../images/github.png');}
 .zvm-contacts .quora{ background-image: url('../images/quora.png');}
