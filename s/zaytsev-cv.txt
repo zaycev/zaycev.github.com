@@ -34,9 +34,9 @@ Internships and Jobs:
   Computational Behavior Group – http://cbg.isi.edu
   * Directed research in Spatiotemporal Data Analytics projects.
     Data Analytics projects. Investigating spatiotemporal domains,
-  	such as Twitter, and construct visualization and analysis tools
-  	that can assist both humans and machines in understanding
-  	patterns within the data.
+    such as Twitter, and construct visualization and analysis tools
+    that can assist both humans and machines in understanding
+    patterns within the data.
   
   08/2011 - 07/2012
   Software Engineer at Medical Insurance Fund of Khanty–Mansi Okrug
