@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vova Zaytsev</title><link>/</link><description></description><atom:link href="/feeds/misc.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 12 Nov 2013 23:47:00 -0800</lastBuildDate><item><title>About me</title><link>/about-me.html</link><description>&lt;p&gt;Hi!&lt;/p&gt;
+&lt;p&gt;This is my personal website where I mostly share what I learn during my studing at &lt;a class="reference external" href="http://usc.edu"&gt;USC&lt;/a&gt;.
+Currently I work in Natural Languages Group at &lt;a class="reference external" href="http://nlg.isi.edu"&gt;ISI&lt;/a&gt; and previously I had internship at &lt;a class="reference external" href="http://a9.com"&gt;A9&lt;/a&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Vladimir Zaytsev</dc:creator><pubDate>Tue, 12 Nov 2013 23:47:00 -0800</pubDate><guid>tag:,2013-11-12:about-me.html</guid></item></channel></rss>
