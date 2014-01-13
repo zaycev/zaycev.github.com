@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vova Zaytsev</title><link>/</link><description></description><atom:link href="/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 13 Jan 2014 17:57:00 -0800</lastBuildDate><item><title>Программа по CS для первого курса</title><link>/stories/2014/01/13/2-years-cs-curriculum/</link><description>&lt;p&gt;Допустим, вы хотите изучать компьютерные науки и научиться программировать с нуля, вы сейчас на первом курсе и живете в России.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Vova Zaytsev</title><link href="http://zaycev.github.io/" rel="alternate"></link><link href="http://zaycev.github.io/feeds/all.atom.xml" rel="self"></link><id>http://zaycev.github.io/</id><updated>2014-01-13T17:57:00-08:00</updated><entry><title>Программа по CS для первого курса</title><link href="http://zaycev.github.io/stories/2014/01/13/2-years-cs-curriculum/" rel="alternate"></link><updated>2014-01-13T17:57:00-08:00</updated><author><name>Vladimir Zaytsev</name></author><id>tag:zaycev.github.io,2014-01-13:stories/2014/01/13/2-years-cs-curriculum/</id><summary type="html">&lt;p&gt;Допустим, вы хотите изучать компьютерные науки и научиться программировать с нуля, вы сейчас на первом курсе и живете в России.
 Здесь я написал что вам лучше всего делать в первый год.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Литература&lt;/h2&gt;
@@ -59,4 +59,4 @@
 &lt;h2&gt;***&lt;/h2&gt;
 &lt;p&gt;В целом, в первый год я рекомендую сконцентрироваться на фундаментальных знания и навыках, а все остальное выучить потом.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Vladimir Zaytsev</dc:creator><pubDate>Mon, 13 Jan 2014 17:57:00 -0800</pubDate><guid>tag:,2014-01-13:stories/2014/01/13/2-years-cs-curriculum/</guid><category>algorithms</category><category>computer science</category><category>read</category><category>todo</category><category>olya</category></item></channel></rss>
+</summary><category term="algorithms"></category><category term="computer science"></category><category term="read"></category><category term="todo"></category><category term="olya"></category></entry></feed>
