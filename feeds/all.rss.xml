@@ -39,7 +39,7 @@
 &lt;h2&gt;Код&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;В чем лучше всего писать код&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Первые годы лучше всего писать код в текстовых редакторах &lt;a class="reference external" href="http://www.vim.org/download.php"&gt;Vim&lt;/a&gt; или &lt;a class="reference external" href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; и не приучиваться к средам разработки таким как Visual Studio или Eclipse – во первых, эти два редактора универсальны и подходят для &lt;em&gt;всего&lt;/em&gt;, во вторых они в некотором смысле достаточно минималистичные и не нагруженны лишними (и вредными) для первокурсника функциями. Vim с моей точки зрения - более простой и &amp;quot;понятный&amp;quot;, а Emacs более гибкий. В крайнем случае используйте &lt;a class="reference external" href="http://notepad-plus-plus.org/"&gt;Notepad++&lt;/a&gt; или &lt;a class="reference external" href="https://github.com/textmate/textmate/releases"&gt;TextMate&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;В качестве ОС лучше всего использовать что-то unix-like, то есть Mac OS или Linux, поскольку вам прийдется работать с терминалом, а также помому что достаточно много программного обеспечения разработанно следуя идеологии unix b вы избежите большого колличества потенциальных проблем при разработке в Windons.&lt;/p&gt;
+&lt;p&gt;В качестве ОС лучше всего использовать что-то unix-like, то есть Mac OS или Linux, поскольку вам прийдется работать с терминалом, а также потому что достаточно много программного обеспечения разработанно следуя идеологии unix и вы избежите большого колличества проблем с которыми вы можете потенциально столкнуться при разработке в Windows.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id14"&gt;
 &lt;h2&gt;Языки программирования&lt;/h2&gt;
