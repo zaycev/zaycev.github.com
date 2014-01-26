@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vova Zaytsev</title><link>/</link><description></description><atom:link href="/feeds/stories.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 13 Jan 2014 17:57:00 -0800</lastBuildDate><item><title>Программа по CS для первого курса</title><link>/stories/2014/01/13/2-years-cs-curriculum/</link><description>&lt;p&gt;Допустим, вы хотите изучать компьютерные науки и научиться программировать с нуля, вы сейчас на первом курсе и живете в России.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vova Zaytsev</title><link>/</link><description></description><atom:link href="/feeds/stories.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 13 Jan 2014 17:57:00 -0800</lastBuildDate><item><title>Программа по CS для первого курса (UPD)</title><link>/stories/2014/01/13/2-years-cs-curriculum/</link><description>&lt;p&gt;&lt;strong&gt;UPD(26.01.2014):&lt;/strong&gt; добавил больше информации о проектах и видеокурсах.&lt;/p&gt;
+&lt;p&gt;Допустим, вы хотите изучать компьютерные науки и научиться программировать с нуля, вы сейчас на первом курсе и живете в России.
 Здесь я написал что вам лучше всего делать в первый год.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;Литература&lt;/h2&gt;
@@ -10,17 +11,28 @@
 &lt;li&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools"&gt;Компиляторы: принципы, технологии и инструменты&lt;/a&gt; (Альфред Ахо и др). В этой книге подробно рассматривается каждый аспект построения компилятора, к тому же после прочтения останется хорошая база по грамматикам, конечным автоматам и строковым алгоритмам.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://os24.org/files/books/Brian_Kernighan_Dennis_Ritchie-The_C_Programming_Language-RU.pdf"&gt;Язык программирования Си&lt;/a&gt; (Керниган и Ритчи). Включил эту книгу потому что считаю что лучше всего начинать программировать на языках C и Lisp (ну или C++ и Lisp), а Керниган и Ритчи - наверное первая книга которую стоит прочесть программисту на этом языке (а в достаточной мере изучить Lisp можно читая SICP).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Хорошие обзоры книг на русском можно найти в &lt;a class="reference external" href="http://alexott-ru.blogspot.ru/search/label/book"&gt;блоге у Алекса Отта&lt;/a&gt;. Сам блог Алекса Отта как и его твиттер также рекомендую почитать.&lt;/p&gt;
+&lt;p&gt;Хорошие обзоры книг на русском языке можно найти в &lt;a class="reference external" href="http://alexott-ru.blogspot.ru/search/label/book"&gt;блоге у Алекса Отта&lt;/a&gt;. Сам блог Алекса Отта как и его твиттер также рекомендую почитать.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id9"&gt;
-&lt;h2&gt;Видеолекции&lt;/h2&gt;
-&lt;p&gt;Список видеолекций которые важно посмотреть на первом курсе:&lt;/p&gt;
+&lt;h2&gt;Видеокурсы&lt;/h2&gt;
+&lt;p&gt;Список видеолекций которые важно посмотреть в первый год:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://habrahabr.ru/post/118605/"&gt;«Курс информационных технологий» от «Яндекса»&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://habrahabr.ru/company/yandex/blog/208716/"&gt;«Алгоритмы и структуры данных поиска» от «Яндекса»&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://habrahabr.ru/post/118605/"&gt;«Курс информационных технологий» от «Яндекса»&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://habrahabr.ru/company/yandex/blog/208716/"&gt;«Алгоритмы и структуры данных поиска» от «Яндекса»&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Сайты с онлайн-курсами и лекциями:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://yury.name/internet/"&gt;Курс лекций &amp;quot;Алгоритмы для Интернета&amp;quot;&lt;/a&gt; – первый онлайн-курс на русском, получивший в свое время спонсорскую помощь от &amp;quot;Яндекса&amp;quot;. Материал не для первого курса, но несколько общих лекций из курса будет полезно посмотреть и почитать, все еще актуален. (рус.)&lt;/li&gt;
+&lt;li&gt;Блог &lt;a class="reference external" href="http://css.freetonik.com/"&gt;Computer Science Student&lt;/a&gt; - много разного обучающего видео от интересного &lt;a class="reference external" href="http://freetonik.com/"&gt;автора&lt;/a&gt;. (рус.)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://hexlet.org/"&gt;Hexlet.org&lt;/a&gt; – дальнейшее развитие CSS, &amp;quot;онлайн университет&amp;quot;. На этом сайте также есть видеокурс по структуре и интерпретации программ, который хоть и не заменит оригинальную книгу, но все равно достаточно интересен. (рус.)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.lektorium.tv/subject/?id=2716"&gt;Lectorium. TV&lt;/a&gt; – сайт с видеолекциями на русском языке (не только по Computer Science) (рус.)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.coursera.org/"&gt;Coursera&lt;/a&gt; – наверно,  самый известный в мире проект по онлайн-обучению осноавнный стэнфордским профоссором &lt;a class="reference external" href="http://ru.wikipedia.org/wiki/%D0%9D%D0%B3,_%D0%AD%D0%BD%D0%B4%D1%80%D1%8E"&gt;Эндрю Нг&lt;/a&gt; . Некоторые курсы (например, &lt;a class="reference external" href="https://www.coursera.org/course/cs101"&gt;CS101&lt;/a&gt;) можно вполне пройти на первом году.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.khanacademy.org/"&gt;Khan Academy&lt;/a&gt; – сайт с видиолекциями, расчитанный больше на школьников чем на студентов. Есть &lt;a class="reference external" href="https://www.khanacademy.org/science/computer-science-subject"&gt;вводный курс&lt;/a&gt; по программированию и Computer Science использующий Python в качестве языка.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.udacity.com/"&gt;Udacity&lt;/a&gt; – аналог Coursera с более прикладным и менее академическим уклоном.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Можно пройти один или два онлайн класса или просмотреть курсы видеолекций из указанных выше сайтов, но это я не могу сказать что это абсолютно необходимо на первом году обучения.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id12"&gt;
+&lt;div class="section" id="id16"&gt;
 &lt;h2&gt;Задачи&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Где можно находить и решать задачи&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Помимо книг, прийдется много времени уделять практике, ниже я привел список сайтов где можно найти достаточно задач для программирования и проверить свои решения.&lt;/p&gt;
@@ -32,21 +44,33 @@
 &lt;li&gt;&lt;a class="reference external" href="http://programmers.stackexchange.com/questions/756/where-can-i-find-programming-puzzles-and-challenges"&gt;Where can I find programming puzzles and challenges?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/662283/websites-like-projecteuler-net"&gt;Websites like projecteuler.net&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Проекты&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Чтобы научиться разрабатывать программы в реальных условиях, помимо решения задач с вышеуказанных сайтов я бы очень сильно рекомендовал все время работать над каким-нибудь своим проектом. Здесь важно чтобы проект решал какую-то реальную задачу которая вам более-менее близка.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id13"&gt;
+&lt;div class="section" id="id17"&gt;
+&lt;h2&gt;Проекты&lt;/h2&gt;
+&lt;p&gt;Чтобы научиться разрабатывать программы в реальных условиях, помимо решения задач с вышеуказанных сайтов я бы очень сильно рекомендовал все время работать над каким-нибудь своим проектом. Здесь важно чтобы проект решал какую-то реальную задачу которая вам более-менее близка и интересна.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Как найти интересный проект?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Несколько советов:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Изучите историю CS, прочитайте о том как создавались изветстные проекты, истории компаний и биографии умных, выдающихся людей в Computer Science. Множество статей можно найти на &lt;a class="reference external" href="http://habrahabr.ru/hub/it_bigraphy/page3/"&gt;habrahabr&lt;/a&gt; и википедии или &amp;quot;нагуглить&amp;quot;. Также есть неплохие документальные фильмы, например “Revolutionary OS” и “Загрузка: Подлинная история интернета”.&lt;/li&gt;
+&lt;li&gt;Старайтесь следить за тем, над чем сегодня работают инженеры и исследователи значимых организаций в индустрии, которая к вам ближе всего (например, Google в поиске или DreamWorks в компьютерной графике и т.д). Для этого можно читать блоги, следить за конференциями или новостями (&lt;a class="reference external" href="https://news.ycombinator.com/"&gt;YCombinator&lt;/a&gt; (!), &lt;a class="reference external" href="http://www.youtube.com/watch?v=JAFhkdGtHck"&gt;SIGRAPH&lt;/a&gt;, &lt;a class="reference external" href="http://aclweb.org/anthology/"&gt;ACL&lt;/a&gt; , &lt;a class="reference external" href="http://papers.nips.cc"&gt;NIPS&lt;/a&gt;, &lt;a class="reference external" href="http://arxiv.org/"&gt;arXiv&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Побольше путешествуйте и посещайте разные события, такие как конференции, воркшопы и летние школы. Если вы не знаете куда поехать, вот несколько хороших мест: &lt;a class="reference external" href="http://esscass.cs.ut.ee/2013"&gt;ESSCaSS&lt;/a&gt;, &lt;a class="reference external" href="http://aistconf.org"&gt;АИСТ&lt;/a&gt;, &lt;a class="reference external" href="http://almada2013.ru"&gt;ALMADA&lt;/a&gt;, &lt;a class="reference external" href="http://summer.berkeley.edu"&gt;Berkeley Summer School&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.google-melange.com/gsoc/projects/list/google/gsoc2013"&gt;Google Summer of Code&lt;/a&gt; – программа, участвуя в которой, вы можете поработать над каким нибудь проектом получаяя при этом стипендию от Google.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://jakelevine.me/blog/2013/03/dont-learn-how-to-code-learn-how-to-make-things/"&gt;Почитайте&lt;/a&gt; Джейка Левайна (Jake Levine) о том как нужно учиться создавать вещи.&lt;/li&gt;
+&lt;li&gt;Пользуйтесь сайтом &lt;a class="reference external" href="https://github.com/explore"&gt;github.com&lt;/a&gt; и изучайте как устроенны open-source проекты. Этот сайт можно использовать чтобы находить открытое ПО для своих задач, чтобы узнавать над чем сейчас активнее всего работает сообщество (с помощью рейтинга), или чтобы публиковать свой код. Все это в целом даст некоторое представление о том чем сейчас актуально или не актуально заниматься в Software Engineering, а изучение чужого кода поможет вам приобщиться к культуре программирования и выйти из &lt;a class="reference external" href="http://ru.wikipedia.org/wiki/Миф_о_пещере"&gt;пещеры&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id21"&gt;
 &lt;h2&gt;Код&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;В чем лучше всего писать код&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Первые годы лучше всего писать код в текстовых редакторах &lt;a class="reference external" href="http://www.vim.org/download.php"&gt;Vim&lt;/a&gt; или &lt;a class="reference external" href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; и не приучиваться к средам разработки таким как Visual Studio или Eclipse – во первых, эти два редактора универсальны и подходят для &lt;em&gt;всего&lt;/em&gt;, во вторых они в некотором смысле достаточно минималистичные и не нагруженны лишними (и вредными) для первокурсника функциями. Vim с моей точки зрения - более простой и &amp;quot;понятный&amp;quot;, а Emacs более гибкий. В крайнем случае используйте &lt;a class="reference external" href="http://notepad-plus-plus.org/"&gt;Notepad++&lt;/a&gt; или &lt;a class="reference external" href="https://github.com/textmate/textmate/releases"&gt;TextMate&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Первые годы лучше всего писать код в текстовых редакторах &lt;a class="reference external" href="http://www.vim.org/download.php"&gt;Vim&lt;/a&gt; или &lt;a class="reference external" href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; и не приучиваться к средам разработки, таким как Visual Studio или Eclipse – во первых, эти два редактора универсальны и подходят для &lt;em&gt;всего&lt;/em&gt;, во вторых они в некотором смысле достаточно минималистичные и не нагруженны лишними (и вредными) для первокурсника функциями. Vim с моей точки зрения - более простой и &amp;quot;понятный&amp;quot;, а Emacs более гибкий. На худой конец, используйте &lt;a class="reference external" href="http://notepad-plus-plus.org/"&gt;Notepad++&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/textmate/textmate/releases"&gt;TextMate&lt;/a&gt; или &lt;a class="reference external" href="http://www.sublimetext.com/"&gt;SublimeText&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;В качестве ОС лучше всего использовать что-то unix-like, то есть Mac OS или Linux, поскольку вам прийдется работать с терминалом, а также потому что достаточно много программного обеспечения разработанно следуя идеологии unix и вы избежите большого колличества проблем с которыми вы можете потенциально столкнуться при разработке в Windows.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id14"&gt;
+&lt;div class="section" id="id22"&gt;
 &lt;h2&gt;Языки программирования&lt;/h2&gt;
-&lt;p&gt;На мой взгляд правильнее всего начинать с фундаментальных вещей. На первом курсе я бы рекомендовал изучить один язык который достаточно близок к &lt;em&gt;железу&lt;/em&gt;, такой как ANSI C или C++. Аргумент состоит в том что, во первых для успешного применения, эти языки требуют какого-то минимального понимамия того как устроен компьютер, а более &amp;quot;высокоуровневые&amp;quot; языки (Java, C#, Python и др.) абстрагируют вас от этой реальности что не очень полезно на первом курсе (хотя есть и альтернативное мнение). К тому же вам будет легче перейти с C/C++ на Java, C#, Python и другие языки, но не наоборот (а вам вероятно прийдется писать низкоуровневый код в будущем), но вообще этот фактор не так существенен.&lt;/p&gt;
+&lt;p&gt;На мой взгляд, лучше всего начинать с фундаментальных понятий. На первом курсе я бы рекомендовал изучить один язык который достаточно близок к &lt;em&gt;железу&lt;/em&gt;, такой как ANSI C или C++. Аргумент состоит в том что, во первых для успешного применения, эти языки требуют какого-то минимального понимамия того как устроен компьютер, а более &amp;quot;высокоуровневые&amp;quot; языки (Java, C#, Python и др.) абстрагируют вас от этой реальности что не очень полезно на первом курсе (хотя есть и альтернативное мнение). К тому же, для вас в будущем будет легче перейти с C/C++ на Java, C#, Python и другие языки, но не наоборот (а вам вероятно прийдется писать низкоуровневый код в будущем), но вообще этот фактор не так существенен.&lt;/p&gt;
 &lt;p&gt;Также вам стоит освоить один язык поддерживающий функцианальную парадигму, такой как Lisp (или его диалект Scheme) или Haskell. Такой опыт позволит начать по-другому смотреть на программирование, что будет полезно даже если вы не будете использовать эти языки на практике. Пол Грэкхэм хорошо &lt;a class="reference external" href="http://www.nestor.minsk.by/sr/2003/07/30710.html"&gt;написал&lt;/a&gt; зачем нужно изучить Лисп.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id16"&gt;
+&lt;div class="section" id="id24"&gt;
 &lt;h2&gt;Места&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Полезные места в России&lt;/em&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -55,8 +79,8 @@
 &lt;li&gt;&lt;a class="reference external" href="http://amse.ru/"&gt;Академия современного программирования&lt;/a&gt; (СПБ)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id19"&gt;
+&lt;div class="section" id="id27"&gt;
 &lt;h2&gt;***&lt;/h2&gt;
-&lt;p&gt;В целом, в первый год я рекомендую сконцентрироваться на фундаментальных знания и навыках, а все остальное выучить потом.&lt;/p&gt;
+&lt;p&gt;В целом, в первый год правилнее всего будет сконцентрироваться на фундаментальных знания и навыках, а более прикладные направления оставить на второй и более позднии курсы.&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Vladimir Zaytsev</dc:creator><pubDate>Mon, 13 Jan 2014 17:57:00 -0800</pubDate><guid>tag:,2014-01-13:stories/2014/01/13/2-years-cs-curriculum/</guid><category>algorithms</category><category>computer science</category><category>read</category><category>todo</category><category>olya</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Vladimir Zaytsev</dc:creator><pubDate>Mon, 13 Jan 2014 17:57:00 -0800</pubDate><guid>tag:,2014-01-13:stories/2014/01/13/2-years-cs-curriculum/</guid><category>algorithm</category><category>computer science</category><category>read</category><category>todo</category><category>olya</category></item></channel></rss>
