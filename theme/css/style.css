@@ -1,28 +1,55 @@
 /* general style */
-body    { font: 18px/25px 'Palatino', 'Palatino Linotype', 'Georgia', serif;
-          margin: 0; padding: 0; }
+body    {
+    font-family: 'PT Serif', Georgia, serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 19px;
+    color: #333;
+}
+
+
 a       { /*color: #432165;*/ color: #234764; }
 a:hover { color: #3b185f; background: #f9f8fa; }
 
 /* headlines */
-h1, h2, h3, h4, h5, h6      { /*font-family: 'Vollkorn', 'Georgia', serif;*/
-                              font-family: 'Noticia Text', serif;
-                              font-weight: normal; color: #222; /*color: #AF3D04;*/ }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'PT Sans', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+    color: #222;
+}
+
 h1 a, h2 a, h3 a, h4 a,
 h5 a, h6 a                  { text-decoration: none; }
 h1 a:hover, h2 a:hover,
 h3 a:hover, h4 a:hover      { color: #432165; text-decoration: underline; }
-h1.title                    { width: 560px; }
-h1, h2                      { margin: 10px 0 25px 0; }
+
+h1.title {
+    color: #333;
+    font-size: 50px;
+    line-height: 1.1;
+    font-family: 'PT Sans', 'PT Sans', Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    font-weight: 300;
+    letter-spacing:-1px;
+    font-weight: normal;	
+    font-style:normal;
+    line-height: 1em;
+}
+
+
+h1                          { margin: 10px 0 25px 0; }
+h2                          { margin: 32px 0 10px 0; }
 h1                          { font-size: 48px; line-height: 52px; }
 h2                          { font-size: 36px; line-height: 40px; }
+h3                          { font-size: 24px; line-height: 28px; font-style: italic; }
 
 /* layout elements */
 div.container               { width: 740px; margin: 48px auto; padding: 0; }
 div.header                  { float: left; }
 div.navigation              { float: left; }
-div.navigation a            { text-decoration: none; 
-                              font-size: 22px; 
+div.navigation a            { text-decoration: none;
+                              font-size: 22px;
                               padding: 10px;
                             }
 
@@ -35,7 +62,7 @@ div.navigation ul li        { display: inline; margin: 0 2px; padding: 0;}
 div.body                    { clear: both; }
 div.footer                  { border-top: 1px dotted #ddd; padding-top: 9px;
                               margin-top: 42px; font-size: 16px; color: #888;
-                              text-align: center; }
+                              text-align: left; }
 div.footer a                { color: #888; }
 div.footer p                { margin: 0; }
 
@@ -51,7 +78,13 @@ dt                              { margin: 25px 0 16px 0; padding: 0; }
 dd                              { margin: 16px 0 25px 40px; padding: 0; }
 ul ol, ol ul, ul ul, ol ol      { margin: 10px 0; padding: 0 0 0 40px; }
 li                              { padding: 0; }
-h1 + p.date                     { margin-top: -20px; font-style: italic; }
+
+p.date {
+    color: #777;
+    font-size: 14px;
+    font-family: 'PT Sans', 'PT Sans', Georgia, 'Times New Roman', Times, serif;
+    margin:0;
+}
 
 /* code formatting.  no monospace because of webkit (bug?) */
 pre, code, tt   { font-family: 'Consolas', 'Deja Vu Sans Mono',
@@ -100,7 +133,11 @@ div.entry-overview div.date         { float: left; width: 120px; color: #888;
 /*div.entry-overview h1:after         { content: " —"; }*/
 
 /* other alignment things */
-img.align-center        { margin: 15px auto; display: block; }
+img.align-center        {
+    border: 1px inset rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    display: block;
+}
 
 /* pagination */
 div.pagination          { margin: 36px 0 0 0; text-align: center; }
@@ -117,16 +154,16 @@ li.tag-3           {font-size: 160.0%;}
 li.tag-4           {font-size: 200.0%;}
 
 /* latex math */
-span.math img   { margin-bottom: -7px; }
+span.math img   {margin-bottom: -7px; }
 
 div.blog-epilogue           { margin-top: 100px; font-size: 19px; text-align: center;}
 div.blog-epilogue a         {text-decoration: none;
                              padding-left: 30px; padding-right: 30px;}
 
 /* about img */
-img.align-left { 
-    float: left; 
-    margin: 20px; 
+img.align-left {
+    float: left;
+    border: 1px inset rgba(0, 0, 0, 0.1);
 }
 
 /* github gists */
@@ -161,3 +198,76 @@ img.align-left {
   -webkit-border-top-right-radius: 10px !important;
   font-size: 0.85em !important;
 }
+
+.footer * {
+    color: #999;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-height: 1.6;
+}
+
+.copyright {
+    color: #555;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.license {
+    opacity:0.2;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+    float: right;
+}
+
+
+
+nav.social-networks {
+	margin-top: 20px;
+}
+
+nav.social-networks ul {
+    padding:0;
+    margin-top:0;
+}
+
+nav.social-networks li {
+	margin-right: 5px;
+    list-style: none;
+    display: inline-block;
+}
+
+nav.social-networks li a {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 22px;
+	height: 22px;
+	padding: 2px;
+	background-image: url(../social.png);
+	background-repeat: no-repeat;
+	opacity: 0.3;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+nav.social-networks li a:hover {
+	opacity: 0.6;
+}
+
+.social-networks .tw { background-position: 0 0;      }
+.social-networks .ig { background-position: -35px 0;  }
+.social-networks .vk { background-position: -70px 0;  }
+.social-networks .yt { background-position: -105px 0; }
+.social-networks .li { background-position: -135px 0; }
+.social-networks .fb { background-position: -167px 0; }

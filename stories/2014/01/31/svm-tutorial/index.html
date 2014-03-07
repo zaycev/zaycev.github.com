@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> Вечер с… SVM | Vova Zaytsev </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+      });
+      MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+      MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+    </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+    
+    
+  </head>
+  <body>
+    <div class=container>
+
+      <div class=navigation>
+        <ul>
+            <li><a href="/index.html">Stories</a> </li>
+            <li><a href="/tags.html">Tags</a> </li>
+            <li><a href="/pages/about-me.html">About</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <p class=date> Fri 31 January 2014 </p>
+    <h1 class="title"> Вечер с… SVM</h1>
+    <img alt="" class="align-center" src="/images/svm-tutorial_latte.jpg" />
+<p>Метод опорных векторов (support vector machines, <a class="reference external" href="http://homepages.rpi.edu/~bennek/class/mmld/papers/svn.pdf">SVM</a>) - один из наиболее часто используемых в современном мире алгоритмов машинного обучения. SVM можно применять для многих прикладных задач: парсить текст на естественных языках, распозновать визуальные образы, определять части речи слов в тексте, делать кредитный скоринг, сортировать поисковую выдачу по релевантности и много всего другого интересного. Он позволяет решать как задачи классификации так и задачи регрессии. К тому же, с помощью правильно подобранной функции ядра (<a class="reference external" href="http://en.wikipedia.org/wiki/Kernel_trick">kernel trick</a>), позволяет строить нелинейные разделяющие плоскости, или приблежать нелинейные функции в случае регрессии. Что особенно важно, для него доказанны некоторые важные теоретические гарантии для моделей построенных методом SVM.</p>
+<p>Ниже, я постараюсь по шагам изложить базовую теорию лежащую в основе метода и привести его реализацию для конкретного случая (на языке Python и псевдокоде), стараясь, где можно, избежать лишнего использования греческих букв. Для этого мы напишем простой классификатор для распазнавания рукописных цифр – я выбрал эту задачу как одну из самых очевидных для восприятия и не требующую каких либо специфичных знаний о предметной области.</p>
+<div class="section" id="id2">
+<h2>Введение</h2>
+<p>Представим что мы хотим получить такую систему которая бы могла распознавать цифры по их изображениям. Это может к примеру пригодиться для считывания индексов на почтовых конвертах, распознавании номеров на автомобилях или адресов на домах. Допустим, что у нас есть небольшой набор картинок с различными изображениями цифр и файл c ответами, где написано какая цифра находится на какой картинке. Теперь мы хотим чтобы имея эти данные – примеры c ответами, наша система как нибудь сама &quot;научилась&quot; читать цифры на картинках. Думаю, важно заметить что в мире существует огромное колличество самых разных изображений цифр, так что, наша система должна не просто запомнить что нарисовано на наших картинках, а скорее - вывести некоторые общие закономерности у одних и тех же цифр на разных изображениях. Давайте опишем задачу более формально.</p>
+<p>Набор картинок будем называть множеством $\{x_n\}$, а набор ответов множеством $\{y_n\}$. Картинки можно представить как избражения 16x16 пикселей, то есть вектора с 256 компонентами, где каждая компонента принимает значение от $0$ до $1$. Например, $0$ – это черный, $1$ – белый, а промежуточные значения – серый оттенки. Элементы множества $\{y_n\}$ (или по-другому <em>классы</em>), это просто целые числа от 0 до 9 соответвующие каждой арабской цифре.</p>
+<img alt="" class="align-center" src="/images/svm-tutorial_digit_recognition.png" />
+<p>Строго говоря, мы хотим найти такую функцию $f(\cdot)$, которая по заданному $x \in X$, вычисляла бы значение $y$. При этом, как замеченно выше, нам интересно чтобы найденная функция могла хорошо работать не только с изображенниями из нашего набора, но и с другими изображениями цифр (на всем множесте картинок $X$). Иными словами, нам интересно чтобы система могла сделать какое-то обобщение от том как выглядят различные рукописные цифры на основе небольшой коллекции имеющихся у нас примеров различных цифр.</p>
+<p>Чтобы разобраться в том как применить SVM для этой задачи, нам для начала нужно взглянуть на базовую теорию, которая изложена в следующем разделе. Если вы уже знакомы с основными концепциями в машинном обучении, то этот раздел можно пропустить.</p>
+</div>
+<div class="section" id="id3">
+<h2>Подготовка</h2>
+<p>Давайте вкратце посмотрим на центральные понятия в машинном обучении, если вы хотите более глубоко изучить данную тему – обратитесь к ссылкам конце этой статьи. Для удобства, сначала предположим что у нас есть всего две цифры которые нужно научиться распознавать. Также, ответы соответвующие этим цифрам будут принимать значения $+1$ и $-1$, то есть $y \in \{+1, -1\}$.</p>
+<div class="section" id="id4">
+<h3>Некоторая терминология</h3>
+<dl class="docutils">
+<dt>Обучающие данные (training data)</dt>
+<dd>$N$ примеров: $D^{TRAIN}=\{(x_1, y_1), (x_2, y_2), \dots, (x_N, y_N)\}$. Эти данные нужны для того чтобы восстановить зависимость $f(\cdot)$ между переменными $x$ и $y$  (в нашей системе - изображения и цифры).</dd>
+<dt>Тестовые данные (test data)</dt>
+<dd>$M$ примеров: $D^{TEST}=\{(x_1, y_1), (x_2, y_2), \dots, (x_M, y_M)\}$. Эти данные нужны для того чтобы проверить как хорошо $f(\cdot)$ определяет классы для $x \not\in D^{TRAIN}$, то есть как хорошо наша система распознает новые изображения, для которых она не знает правильных ответов.</dd>
+<dt>Решающая функция (classication rule):</dt>
+<dd>$y = h(x)$, алгоритм или функция, приближающая $y$ на всем множестве $X$. Для SVM решающую функцию принято обозначать $h$, которая имеет следующий вид: $h(x) = SIGN(f(x))$, где $f(x)=w^T\phi(x) + b$.</dd>
+<dt>Функция потерь (loss function)</dt>
+<dd>$l(f(x), y)$ – величина или цена ошибки классификатора на одном примере. Существует много разных функций потерь для различных задач, в нашем случае используется следующая функция потерь (Hinge Loss Function):</dd>
+</dl>
+<p>\[
+l(f(x), y) =
+\begin{cases}
+0, &amp; \text{если $y\cdot f(x) \geqslant 1$;} \\
+1 - y\cdot f(x), &amp; \text{в противном случае.}
+\end{cases}
+\]</p>
+<blockquote>
+Более короткая форма записи:</blockquote>
+<p>$$l^{HINGE}(f(x), y) = max(0, 1 - y~f(x))$$</p>
+<p>Из формулы видно, что мы &quot;платим&quot; штраф 0 долларов, если наш ответ для $y$ совпадает с истинным значением по знаку и больше или равен ему по модулю. В противеном случае, заплатим тем больше, чем сильнее наш ответ отличается от истинного значения.</p>
+<img alt="" class="align-center" src="/images/svm-tutorial_hinge_loss.png" />
+<p>Теперь, допустим что вместо одной пары точек, у нас есть множество $\{x_n\}$ и $\{y_n\}$. В таком случае суммарное значение потерь на этом множестве будет:</p>
+<p>$$
+L = \sum_n{max(0, 1 - y_n~f(x_n))}
+$$</p>
+<p>$$
+L(w) = \sum_n{max(0, 1 - y_n [w^T \phi(x_n) + b])}
+$$</p>
+<p>Нашей задачей будет подобрать такие $w$ и $b$ чтобы суммарное значение потерь было как можно меньше на обучающем множестве, то есть ее нужно оптимизировать. Но для этого мы будем использовать немного другую формулу функции потерь:</p>
+<p>$$
+L(w, \lambda) = \sum_n{max(0, 1 - y_n [w^T \phi(x_n) + b])} + \frac{\lambda}{2}||w||^2_2
+$$</p>
+<p>Здесь $w$ и $b$ - параметры нашей решающей функции, называемые <em>моделью</em>. $\lambda$ - некоторый параметр <em>регуляризации</em>. Суть введения регуляризатора в том чтобы контролировать сложность модели – при больших значениях компонент вектора $w$, регуляризатор будет добавлять большие значения к функции потерь, что в итоге будет приводить к уменьшению или вовсе занулению некоторых коэфициэнтов в моделе. Изображение ниже хорошо иллюстрирует подобную ситуацию:</p>
+<img alt="" class="align-center" src="/images/svm-tutorial_overfitting.png" style="width: 700px;" />
+<p>Модель <strong>срава</strong> сложнее и идеально предсказывает значения во всех обучающих точках. Модель <strong>слева</strong> проще, но делает это с некоторой ошибкой. В данном случае, для нас будет предпочтительнее модель слева, так как она очевидно лучше повторяет поведение функции которую нам нужно приблизить, хоть и делает некоторые ошибки на обучающей выборке.</p>
+<p>Итак, в итоге нашу задачу можно переформулировать следующим образом (напомню, что у нас пока только две цифры):</p>
+<p>$$D^{TRAIN}=\{(x_1, y_1), (x_2, y_2), \dots, (x_N, y_N)\}$$
+$$\underset{b,w}{\text{min}}\left(\sum_n{max(0, 1 - y_n [w^T \phi(x_n) + b])} + \frac{\lambda}{2}||w||^2_2\right)$$</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Минимизация функции потерь</h2>
+<p>Для начала перепишем функцию потерь:</p>
+<p>$$C\sum_n{max(0, 1 - y_n [w^T \phi(x_n) + b])} + \frac{1}{2}||w||^2_2$$</p>
+<p>Где $C = \frac{1}{\lambda}.~$ Далее, сделаем замену $\xi_n=max(0, 1 - y_n [w^T \phi(x_n) + b])$:</p>
+<p>$$\underset{b,w,\{\xi_n\}}{\text{min}}~~C\sum_n{\xi_n} + \frac{1}{2}||w||^2_2$$</p>
+<p>В итоге получем задачу которая еще называется <em>первичной постановкой SVM</em> (Primal Formulation of SVM):</p>
+<p>$$
+\underset{b,w,\{\xi_n\}}{\text{min}}~~C\sum_n{\xi_n} + \frac{1}{2}||w||^2_2
+$$
+$$
+1 - y_n [w^T \phi(x_n) + b] \le \xi_n,~~\forall~n
+$$
+$$
+\xi_n \ge 0,~~\forall~n
+$$</p>
+<p>Можно заметить что это задача квадратичной оптимизации, так как целевая функция имеет степеь равную двойке и ограничения это лениейные неравенства относительно $w$, $b$ и $\xi_n$.</p>
+<p>Перепишем эту задачу в <a class="reference external" href="http://en.wikipedia.org/wiki/Duality_(optimization)">двойственной</a> форме:</p>
+<p>$$
+\underset{\alpha}{\text{max}}
+\sum_n{\alpha_n} -
+\frac{1}{2}\sum_{m,n}y_n y_m \alpha_n \alpha_m \phi(x_m)^T \phi(x_n)
+$$</p>
+<p>$$
+0 \le \alpha_n \le C,~~\forall~n
+$$</p>
+<p>$$
+\sum_n \alpha_n y_n = 0
+$$</p>
+<p>Снова заметим что это задача выпуклой оптимизации поскольку целевая функция вогнутая. Теперь мы имеем $N$ двойственных переменных $\alpha_n$, по одной для каждого оганичения $1 - y_n [w^T \phi(x_n) + b] \le \xi_n$ из первичной формы. Теперь заменим скалярное произведение базисных функций <a class="reference external" href="http://en.wikipedia.org/wiki/Kernel_(statistics)">функцией ядра</a>:</p>
+<p>$$
+\underset{\alpha}{\text{max}}
+\sum_n{\alpha_n} -
+\frac{1}{2}\sum_{m,n}y_n y_m \alpha_n \alpha_m k(x_m, x_n)
+$$</p>
+<p>$$
+0 \le \alpha_n \le C,~~\forall~n
+$$</p>
+<p>$$
+\sum_n \alpha_n y_n = 0
+$$</p>
+</div>
+
+    
+<div class=twitter>
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+    <p class=tags>This entry was tagged as
+      <a href="/tag/svm.html">svm</a>
+      <a href="/tag/ml.html">ml</a>
+      <a href="/tag/algorithm.html">algorithm</a>
+      <a href="/tag/kernel.html">kernel</a>
+    </p>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'zaycevgithub'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+<div class=footer>
+    <div class="copyright">
+        &copy; Vladimir Zaytsev
+        <a class="license"
+           rel="license"
+           href="http://creativecommons.org/licenses/by/4.0/deed.en_US">
+            <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" />
+        </a>
+    </div>
+    <div>
+        Powered by <a href="http://blog.getpelican.com/">Pelican</a>
+    </div>
+<!--
+    <p>
+        <div class=social style="font-size: 27px;">
+            <ul>
+                <script language="JavaScript">
+                    u = 'zaytsev';
+                    s = 'usc.edu';
+                    document.write('<a href=\"mailto:' + u + '@' + s + '\" target=\"_blank\">');
+                </script>
+                    <li>
+                        <i class="icon-envelope icon-large"></i>
+                    </li>
+                </a>
+                <a href="http://twitter.com/vladimirzaytsev" target="_blank">
+                    <li>
+                        <i class="icon-twitter-sign icon-large"> </i> 
+                    </li>
+                </a>
+                <a href="http://www.linkedin.com/pub/vladimir-zaytsev/2b/32a/106">
+                    <li>
+                        <i class="icon-linkedin-sign icon-large" ></i>
+                    </li>
+                </a>
+                <a href="http://github.com/zaycev" target="_blank">
+                    <li>
+                        <i class="icon-github-sign icon-large"></i>
+                    </li>
+                </a>
+                <a href="/feeds/all.rss.xml" rel="alternate" title="Recent Blog Posts">
+                    <li>
+                        <i class="icon-rss icon-large"></i>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </p>
+-->
+    <p>
+        <nav class="social-networks">
+            <ul>
+                <li><a class="tw" href="http://twitter.com/vladimirzaytsev">Twitter</a></li>
+                <li><a class="fb" href="https://www.facebook.com/vladimir.zaytsev">Facebook</a></li>
+                <li><a class="vk" href="http://vk.com/vladimir.zaytsev">Vkontakte</a></li>
+                <li><a class="ig hover" href="http://instagram.com/metanerd">Instagram</a></li>
+                <li><a class="li" href="http://www.linkedin.com/pub/vladimir-zaytsev/2b/32a/106">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </p>
+</div>    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-47310787-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

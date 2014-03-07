@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> Метод Опорных Векторов | Vova Zaytsev </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+      styles: {
+      ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+      },
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+      });
+      MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+      MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+      var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+      VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+      VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+      VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+      VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+      });
+    </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+    
+    
+  </head>
+  <body>
+    <div class=container>
+
+      <div class=navigation>
+        <ul>
+            <li><a href="/index.html">Stories</a> </li>
+            <li><a href="/tags.html">Tags</a> </li>
+            <li><a href="/pages/about-me.html">About</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <h1 class="title"> Метод Опорных Векторов</h1>
+    <p class=date> Mon 14 January 2013 </p>
+    <p>Метод опорных векторов (support vector machines, <a class="reference external" href="http://homepages.rpi.edu/~bennek/class/mmld/papers/svn.pdf">SVM</a>) - один из наиболее часто используемых алгоритмов машинного обучения. Во первых, он позволяет решать как задачи классификации так и задачи регрессии. Во вторых, с помощью правильно подобранной функции ядра (kernel trick), позволяет строить нелинейные разделяющие плоскости, или приблежать нелинейные функции в случае регрессии. Также, для метода доказанны некоторые теоретические гарантии для обощающих свойств построенных моделей. Далее я по шагам постараюсь объяснить теорию лежащую в основе алгоритма и привести пример кода на языке Python, который реализует бинарный классификатор с помощью метода опорных векторов.</p>
+<div class="section" id="id2">
+<h2>Функция потерь</h2>
+<p>Допустим, переменная которую мы хотим спрогнозировать, принимает одно из двух значений $y \in \{-1, + 1\}$ и решающее правило классификатора имеет вид: $h(x) = SIGN(f(x))$, где $f(x)=w^T\phi(x) + b$. Функция потерь SVM имеет следующий вид:</p>
+<p>\[
+l(f(x), y) =
+\begin{cases}
+0, &amp; \text{если $y~f(x) \geqslant 1$;} \\
+1 - y~f(x), &amp; \text{в противном случае.}
+\end{cases}
+\]</p>
+<p>Интуитивно можно увидеть, что мы платим 0 долларов, если наш прогноз для $y$ совпадает с истинным значением по знаку и больше или равен ему по модулю, иначе мы платим тем больше, чем сильнее наш прогноз отличается от истинного значения.</p>
+<p>Более компактно функцию потерь можно переписать следующим образом:</p>
+<p>$$
+l^{HINGE}(f(x), y) = max(0, 1 - y~f(x))
+$$</p>
+<p>Теперь допустим, что вместо одной пары точек, у нас есть множество $\{x_n\}$ и $\{y_n\}$. В таком случае суммарное значение потерь на этом множестве будет:</p>
+<p>$$
+L(w, \lambda) = \sum_n{max(0, 1 - y_n [w^T \phi(x_n) + b])} + \frac{\lambda}{2}||w||^2_2
+$$</p>
+<p>Здесь $w$ и $b$ - параметры нашей линейной модели, $\lambda$ - некоторый параметр регуляризации. Оптимизация функции потерь приведет к уменьшению ошибок классификации на нашем множистве. Также, можно заметить, что такая функция потерь &quot;штрафует&quot; нашу модель за слишком большие значения параметров. Другими словами, если у нас есть две модели $w_1$ и $w_2$ и $||w_1||$ &gt; $||w_2||$, то с точки зрения данной функции потерь, вторая, &quot;более простая&quot; модель, – лучше первой; насколько лучше - зависит от параметра $\lambda$, который не участвует в задаче оптимизации.</p>
+</div>
+
+    
+<div class=twitter>
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+    <p class=tags>This entry was tagged as
+      <a href="/tag/svm.html">svm</a>
+      <a href="/tag/ml.html">ml</a>
+      <a href="/tag/algorithm.html">algorithm</a>
+      <a href="/tag/kernel.html">kernel</a>
+    </p>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'zaycevgithub'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+<div class=footer>
+  <p>&copy; Copyright <script language="JavaScript">var date = new Date(); document.write(date.getFullYear());</script> by Vladimir Zaytsev</p>
+  <p> Powered by <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>.  
+    <a href="https://github.com/fjavieralba/flasky">Theme</a>  by <a href="http://fjavieralba.com">fjavieralba</a>
+  </p> 
+  <p>
+    <div class=social style="font-size: 27px;">
+      <ul>
+        <script language="JavaScript">
+          u = 'zaytsev';
+          s = 'usc.edu';
+          document.write('<a href=\"mailto:' + u + '@' + s + '\" target=\"_blank\">');
+        </script>
+            <li><i class="icon-envelope icon-large"></i> </li>
+        </a>
+        <a href="http://twitter.com/vladimirzaytsev" target="_blank"> <li> <i class="icon-twitter-sign icon-large"> </li></i> </a>
+        <a href="http://www.linkedin.com/pub/vladimir-zaytsev/2b/32a/106"><li><i class="icon-linkedin-sign icon-large" ></i></li></a>
+        <a href="http://github.com/zaycev" target="_blank"> <li> <i class="icon-github-sign icon-large"></i> </li> </a>
+        <a href="/feeds/all.rss.xml" rel="alternate" title="Recent Blog Posts"><li> <i class="icon-rss icon-large"></i> </li></a>
+      </ul>
+    </div>
+  </p>
+</div>    </div>
+  </body>
+</html>
