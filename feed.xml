@@ -6,8 +6,8 @@
 </description>
     <link>https://zaycev.github.io/</link>
     <atom:link href="https://zaycev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jan 2016 23:28:49 +0500</pubDate>
-    <lastBuildDate>Thu, 14 Jan 2016 23:28:49 +0500</lastBuildDate>
+    <pubDate>Thu, 14 Jan 2016 23:32:50 +0500</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 23:32:50 +0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -118,7 +118,7 @@
 
 &lt;p&gt;Если не нравятся Vim или Emacs, используйте SublimeText или Atom.&lt;/p&gt;
 
-&lt;p&gt;Поскольку вам придется работать с терминалом, а также потому что достаточно много программного обеспечения разработано следуя идеологии unix, то и вы избежите большого количества проблем с которыми вы можете потенциально столкнуться при разработке в Windows. Поэтому, в качестве операционной системы лучше всего использовать что-то unix-like: Mac OS или Linux.&lt;/p&gt;
+&lt;p&gt;Поскольку вам придется работать с терминалом, а также потому что достаточно много программного обеспечения разработано следуя идеологии unix, то вы избежите большого количества проблем с которыми можете потенциально при разработке в Windows. Поэтому, в качестве операционной системы лучше всего использовать что-то unix-like: Mac OS или Linux.&lt;/p&gt;
 
 &lt;h1 id=&quot;section-5&quot;&gt;Языки&lt;/h1&gt;
 
