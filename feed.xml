@@ -6,13 +6,13 @@
 </description>
     <link>https://zaycev.github.io/</link>
     <atom:link href="https://zaycev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jan 2016 22:04:45 +0500</pubDate>
-    <lastBuildDate>Thu, 14 Jan 2016 22:04:45 +0500</lastBuildDate>
+    <pubDate>Thu, 14 Jan 2016 23:10:31 +0500</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 23:10:31 +0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>[RU] Как начать изучать Computer Science первокурсникам</title>
-        <description>&lt;p&gt;Допустим, вы сейчас на первом курсе, хотите изучать компьютерные науки, научиться программировать и понимать базовые концепции на хорошем уровне. В этой статье я расскажу с каких материалов лучше начать изучение Computer Science если вы планируете заниматься этим всерьез. Cтатья не претендует на достаточность и лишь некоторая компиляция моих мыслей, но все равно думаю будет полезна многим студентам.&lt;/p&gt;
+        <description>&lt;p&gt;Допустим, вы сейчас на первом курсе, хотите изучать компьютерные науки, научиться программировать и понимать базовые концепции на хорошем уровне. В этой статье я расскажу с каких материалов лучше начать изучение Computer Science если вы планируете заниматься этим всерьез. Cтатья не претендует на полноту и достаточность и является лишь некоторой компиляцией моих мыслей, но все равно, думаю, будет полезна многим студентам.&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;Литература&lt;/h1&gt;
 
@@ -20,7 +20,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Introduction_to_Algorithms&quot;&gt;Алгоритмы: построение и анализ&lt;/a&gt; (Томас Кормен). Хорошая книга по классическим структурам данных и алгоритмам (прежде всего поиск и сортировка). На первом курсе лучше всего читать всю целиком и по порядку, а позднее можно возвращаться к отдельным главам если нужно что-то повторить. Для меня хороша еще и тем что содержит строгие математические доказательства. Вся необходимая математика также есть в приложении к книге.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs&quot;&gt;Структура и интерпретация компьютерных программ&lt;/a&gt; (Харольд Абельсон). Также известна как SICP - очень хорошая книга о программировании в целом.  научит думать и писать программы разными способами. Есть бесплатная электронная версия в переводе от &lt;a href=&quot;newstar.rinet.ru/~goga/sicp/sicp.pdf&quot;&gt;Добросвет&lt;/a&gt;. Также существует видеолекции с &lt;a href=&quot;http://sicp.sergeykhenkin.com/&quot;&gt;субтитрами&lt;/a&gt; на на русском языке.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs&quot;&gt;Структура и интерпретация компьютерных программ&lt;/a&gt; (Харольд Абельсон). Также известна как SICP - очень хорошая книга о программировании в целом.  научит думать и писать программы разными способами. Есть бесплатная электронная версия в переводе от &lt;a href=&quot;newstar.rinet.ru/~goga/sicp/sicp.pdf&quot;&gt;Добросвет&lt;/a&gt;. Также существует видеолекции с &lt;a href=&quot;http://sicp.sergeykhenkin.com/&quot;&gt;субтитрами&lt;/a&gt; на русском языке.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools&quot;&gt;Компиляторы: принципы, технологии и инструменты&lt;/a&gt; (Альфред Ахо). В этой книге подробно рассматривается каждый аспект построения компилятора, к тому же после прочтения останется хорошая база по грамматикам, конечным автоматам и строковым алгоритмам.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://os24.org/files/books/Brian_Kernighan_Dennis_Ritchie-The_C_Programming_Language-RU.pdf&quot;&gt;Язык программирования Си&lt;/a&gt; (Брайан Керниган). Включил эту книгу потому как считаю что на первом курсе полезнее всего научиться программировать на языке Си. В качестве второго языка можно выбрать Python, Java или C#.&lt;/li&gt;
 &lt;/ul&gt;
@@ -67,24 +67,16 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.geeksforgeeks.org&quot;&gt;GeeksforGeeks&lt;/a&gt; – на этом сайте собранны задачи с собеседований в разные компании.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://projecteuler.net&quot;&gt;ProjectEuler&lt;/a&gt; – сайт на котором собраны разные абстрактные задачи (паззлы) по программированию с математическим уклоном. Хорошо научиться писать программы с помощью решения таких задач скорее всего не получится, но можно потренировать мозг или использовать как правильный полигон для освоения нового языка. Задачи упорядочены по возрастанию сложности начиная от совсем уж простых.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://code.google.com/codejam&quot;&gt;GoogleCodeJam&lt;/a&gt; - архив задач с решениями и анализом с соревнований по программированию от Google.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://projecteuler.net&quot;&gt;ProjectEuler&lt;/a&gt; – сайт на котором собраны разные абстрактные задачи (паззлы) по программированию с математическим уклоном. Хорошо научиться писать программы с помощью решения таких задач скорее всего не получится, но можно потренировать мозг или использовать как правильный полигон для освоения нового языка. Задачи упорядочены по возрастанию сложности начиная от совсем уж простых.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.google.com/codejam&quot;&gt;GoogleCodeJam&lt;/a&gt; - архив задач с решениями и анализом с соревнований по программированию от Google.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.topcoder.com&quot;&gt;Top Coder&lt;/a&gt; и &lt;a href=&quot;http://codeforces.com&quot;&gt;Codeforces.ru&lt;/a&gt; – почти тоже самое что и Code Jam - сайты для решение задач по спортивному программированию с онлайн рейтингами участников и прочим.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Еще несколько списков:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://programmers.stackexchange.com/questions/756/where-can-i-find-programming-puzzles-and-challenges&quot;&gt;Where can I find programming puzzles and challenges?&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/662283/websites-like-projecteuler-net&quot;&gt;Websites like projecteuler.net&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://programmers.stackexchange.com/questions/756/where-can-i-find-programming-puzzles-and-challenges&quot;&gt;Where can I find programming puzzles and challenges?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/662283/websites-like-projecteuler-net&quot;&gt;Websites like projecteuler.net&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;section-3&quot;&gt;Как Найти Интересный Проект&lt;/h1&gt;
