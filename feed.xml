@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vladimir Zaytsev Blog</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 14 Jan 2016 18:47:26 +0500</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 18:47:26 +0500</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>[RU] Как начать изучать Computer Science первокурсникам</title>
+        <description>&lt;p&gt;Допустим, вы сейчас на первом курсе, хотите изучать компьютерные науки, научиться программировать и понимать базовые концепции на хорошем уровне. В этой статье я расскажу с каких материалов лучше начать изучение Computer Science если вы планируете заниматься этим всерьез.&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;Литература&lt;/h1&gt;
+
+&lt;p&gt;Обязательная литература по алгоритмам и программированию, только самое необходимое вне зависимости от того чем вы в итоге будете заниматься.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Introduction_to_Algorithms&quot;&gt;Алгоритмы: построение и анализ&lt;/a&gt; (Томас Кормен). Хорошая книга по классическим структурам данных и алгоритмам (прежде всего поиск и сортировка). На первом курсе лучше всего читать всю целиком и по порядку, а позднее можно возвращаться к отдельным главам если нужно что-то повторить. Для меня хороша еще и тем что содержит строгие математические доказателства. Вся необходимая математика также есть в приложении к книге.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs&quot;&gt;Структура и интерпретация компьютерных программ&lt;/a&gt; (Харольд Абельсон). Также известна как SICP - очень хорошая книга о программировании в целом.  научит думать и писать программы разными способами. Есть бесплантая электронная версия в переводе от &lt;a href=&quot;newstar.rinet.ru/~goga/sicp/sicp.pdf&quot;&gt;Добросвет&lt;/a&gt;. Также существует видеолекции с &lt;a href=&quot;http://sicp.sergeykhenkin.com/&quot;&gt;субтитрами&lt;/a&gt; на на русском языке.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools&quot;&gt;Компиляторы: принципы, технологии и инструменты&lt;/a&gt; (Альфред Ахо). В этой книге подробно рассматривается каждый аспект построения компилятора, к тому же после прочтения останется хорошая база по грамматикам, конечным автоматам и строковым алгоритмам.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://os24.org/files/books/Brian_Kernighan_Dennis_Ritchie-The_C_Programming_Language-RU.pdf&quot;&gt;Язык программирования Си&lt;/a&gt; (Брайан Керниган). Включил эту книгу потому как считаю что на первом курсе полезнее всего научиться программировать на языке Си. В качестве второго языка можно выбрать Python, Java или C#.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;Видеокурсы&lt;/h1&gt;
+
+&lt;p&gt;На русском языке в первый год полезно будет посмотреть два курса видео-лекций от Яндекса:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://habrahabr.ru/post/118605/&quot;&gt;Курс информационных технологий&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://habrahabr.ru/company/yandex/blog/208716/&quot;&gt;Алгоритмы и структуры данных поиска&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Первый курс более прикладной и содержит небольшую историческую справку, повествующую почему современные компьютеры устроенны именно так, а не иначе. Второй курс более академическией и сфокусирован на основных алгоритмических проблемах которые надо понимать и уметь решать.&lt;/p&gt;
+
+&lt;p&gt;Хорошие cайты с онлайн-курсами и лекциями:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://yury.name/internet/&quot;&gt;Алгоритмы для Интернета&lt;/a&gt; – наверное, первый онлайн-курс на русском языке, получивший даже в свое время грант от Яндекса. Материал не для первого курса, но несколько общих лекций будет полезно посмотреть и почитать. Все еще актуален. Автор, &lt;a href=&quot;http://yury.name&quot;&gt;Юрий Лифшиц&lt;/a&gt; – математик, бывший исследователь Yahoo и Caltech, в данный момент занимается онлайн образованием в Кремниевой Долине.&lt;/li&gt;
+  &lt;li&gt;Блог &lt;a href=&quot;http://css.freetonik.com&quot;&gt;Computer Science Student&lt;/a&gt; - содержит много разного обучающего видео от интересного автора. Сейчас проект закрыт и больше не обновляется, но тем не менее содержит архив полезных материалов. Автор, &lt;a href=&quot;http://freetonik.com/blog/&quot;&gt;Рахим Давлеткалиев&lt;/a&gt;, учился в Канаде и в свое время рассказывал в своем блоге о том, как изнутри выглядит обучение в Канадском университете.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ru.hexlet.io&quot;&gt;Hexlet&lt;/a&gt; – онлайн университет. Этот сайт содержит большое количество обущачающих, прежде всего практических, курсов по программированию и вычислительным технологиям. Основатель проекта также Рахим Давлеткалиев.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lektorium.tv/subject/?id=2716&quot;&gt;Lectorium&lt;/a&gt; – сайт с большим количеством видеолекций от Российских университетов. Не только по Computer Science.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/&quot;&gt;Coursera&lt;/a&gt; – наверное, самый крупный в мире проект по онлайн-обучению. Основан известным стэнфордским профоссором &lt;a href=&quot;https://ru.wikipedia.org/wiki/Нг,_Эндрю&quot;&gt;Эндрю Нг&lt;/a&gt; (сейчас – исследователь в китайской поисковой компании Baidu). Некоторые курсы, такие как &lt;a href=&quot;https://www.coursera.org/course/cs101&quot;&gt;CS101&lt;/a&gt;, можно проходить на первом курсе университета.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/screen-coursera-1.png&quot; alt=&quot;Coursera&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/&quot;&gt;Khan Academy&lt;/a&gt; – сайт с видиолекциями, ориентированный больше на школьников чем на студентов. Очень известен и популярен на западе. Есть вводный &lt;a href=&quot;https://www.khanacademy.org/computing/computer-science/algorithms&quot;&gt;курс&lt;/a&gt;, обучающий программированию и Computer Science с помощью языка JavaScript. Проект несколько лет назад получил грант от фонда Мелинды и Била Гейтсов на 1 млрд. долларов.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.udacity.com/&quot;&gt;Udacity&lt;/a&gt; – аналог Coursera с более прикладным и менее академическим уклоном.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Рекомендую за год пройти один или два онлайн курса или хотя-бы просмотреть  видеолекции с одного из указанных выше сайтов. Также, почти у каждого хорошего западного университета есть свой Youtube канал с онлайн лекциями которые легко можно найти в Google по запросам вроде “MIT computer science video lectures” или “Stanford deep NLP class”.&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;Где Находить и Решать Задачи&lt;/h1&gt;
+
+&lt;p&gt;Помимо книг и лекций, потребуется много времени уделять практике. Ниже, я привел список ресурсов на которых можно находить задачи для программирования и проверять свои решения:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hackerrank.com/&quot;&gt;HackerRank&lt;/a&gt; – платформа для практики в компьютерных науках (алгоритмы, ии, машинное обучение и др.) и прикладной математике. Вы можете составить себе курс, а HackerRank создаст для вас тестовые задания под выбранный выми язык программирования. В платформу интегрирована среда для программирования и также есть статитстика ваших результатов в сравнении с другими пользователями – около 1 миллиона программистов.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/screen-hrank-1.png&quot; alt=&quot;HackerRank&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.geeksforgeeks.org&quot;&gt;GeeksforGeeks&lt;/a&gt; – на этом сайте собранны задачи с собеседований в разные компании.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://projecteuler.net&quot;&gt;ProjectEuler&lt;/a&gt; – сайт на котором собраны разные абстрактные задачи (паззлы) по программированию с математическим уклоном. Хорошо научиться писать программы с помощью решения таких задач скорее всего не получится, но можно потренировать мозг или использовать как правильный полигон для освоения нового языка. Задачи упорядочены по возрастанию сложности начиная от совсем уж простых.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://code.google.com/codejam&quot;&gt;GoogleCodeJam&lt;/a&gt; - архив задач с решениями и анализом с соревнований по программированию от Google.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.topcoder.com&quot;&gt;Top Coder&lt;/a&gt; и &lt;a href=&quot;http://codeforces.com&quot;&gt;Codeforces.ru&lt;/a&gt; – почти тоже самое что и Code Jam - сайты для решение задач по спортивному программированию с онлайн рейтингами участников и прочим.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Еще несколько списков:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://programmers.stackexchange.com/questions/756/where-can-i-find-programming-puzzles-and-challenges&quot;&gt;Where can I find programming puzzles and challenges?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/662283/websites-like-projecteuler-net&quot;&gt;Websites like projecteuler.net&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;Как Найти Интересный Проект&lt;/h1&gt;
+
+&lt;p&gt;Чтобы научиться разрабатывать программы которые решают проблемы в реальном мире, помимо теории и практики на вышеуказанных сайтках, потребуется опыт работы над над каким-нибудь своим проектом. Здесь важно чтобы проект решал какую-то реальную задачу, которая вам более-менее близка и интересна. Несколько советов от том как быть в курсе того что сейчас актуально:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Знайте историю. Прочитайте о том как создавались изветстные проекты, истории компаний и биографии умных, выдающихся людей в компьютерных науках. Множество статей можно найти на habrahabr, википедии или в Google. Также, есть неплохие документальные фильмы, например “Revolutionary OS” и “Загрузка: Подлинная история интернета” и несколько других.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Старайтесь следить за тем, над чем сегодня работают команды разработчиков и исследователей в значимых организаций в индустрии, которая к вам ближе всего (например, Google в поиске или Disney в компьютерной графике и т.д). Для этого можно читать блоги, следить за новостями (прежде всего через HackerNews) или конференциями (SIGRAPH, ACL, NIPS, arXiv).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/screen-hn-1.png&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Побольше путешествуйте и посещайте разные события, такие как конференции, воркшопы и летние школы. Если вы не знаете куда поехать, вот несколько хороших мест: ESSCaSS, АИСТ, ALMADA, Berkeley/Stanford Summer Schools.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Google Summer of Code – программа, участвуя в которой, вы можете поработать над каким нибудь проектом получаяя при этом стипендию от Google.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Почитайте &lt;a href=&quot;http://jakelevine.me/blog/2013/03/dont-learn-how-to-code-learn-how-to-make-things/&quot;&gt;Джейка Левайна&lt;/a&gt; о том как нужно учиться создавать вещи.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Пользуйтесь сайтом github.com и изучайте как устроенны open-source проекты. Этот сайт можно использовать чтобы находить открытое ПО для своих задач, чтобы узнавать над чем сейчас активнее всего работает сообщество (есть рейтинг популярности проектов), или чтобы публиковать свой код.&lt;/li&gt;
+  &lt;li&gt;Ежедневные списки самых интересных проектов можно находить на сайте &lt;a href=&quot;https://www.producthunt.com&quot;&gt;Product Hunt&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;В Чем Писать Код&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/screen-atom-editor.jpg&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;В чем лучше всего писать код?&lt;/p&gt;
+
+&lt;p&gt;Первые годы лучше всего писать код в текстовых редакторах Vim или Emacs и не приучиваться к средам разработки, таким как Visual Studio или Eclipse. Во первых, эти два редактора универсальны и подходят практически для всего что делает программист. Во вторых, они достаточно минималистичные и не нагруженны лишними (и вредными) для первокурсника функциями. Vim с моей точки зрения - более простой и “понятный”, а Emacs более гибкий.&lt;/p&gt;
+
+&lt;p&gt;Если не нравятся Vim или Emacs, используйте SublimeText или Atom.&lt;/p&gt;
+
+&lt;p&gt;Поскольку вам прийдется работать с терминалом, а также потому что достаточно много программного обеспечения разработанно следуя идеологии unix, то и вы избежите большого колличества проблем с которыми вы можете потенциально столкнуться при разработке в Windows. Поэтому, в качестве операционной системы лучше всего использовать что-то unix-like: Mac OS или Linux.&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;Языки&lt;/h1&gt;
+
+&lt;p&gt;На первом курсе я бы рекомендовал изучить один язык который достаточно близок к железу, такой как Си или Си++. На Си написаны большинство популярных операционных систем (windows, os x, linux, ios, android) и фактически, это язык на котором “говорит” ваша операционная система. Поэтому, хорошее знание Си даст хорошее представление о том как устроенны основные функции ОС – среды, в которой будут работать ваши программы, на чем бы они не были написанны. Также, для вас в будущем будет легче перейти с Си/Си++ на Java, C#, Python и другие более высокоуровневые языки, но не наоборот. Помимо учебника Кернигана, есть хорошая &lt;a href=&quot;https://matt.sh/howto-c&quot;&gt;статья&lt;/a&gt; о том как писать код на Си в 2016 году.&lt;/p&gt;
+
+&lt;p&gt;В дополнение к Си или Си++, рекомендую освоить один язык поддерживающий функцианальную парадигму, такой как Lisp (можно его диалект Scheme) или Haskell. Такой опыт позволит начать по-другому смотреть на программирование, что будет полезно даже если вы не будете использовать эти языки на практике. Пол Грэкхэм хорошо &lt;a href=&quot;http://www.nestor.minsk.by/sr/2003/07/30710.html&quot;&gt;написал&lt;/a&gt; зачем нужно изучить Лисп.&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;Места&lt;/h1&gt;
+
+&lt;p&gt;Полезные места, где можно научиться компьютерным наукам в России:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://shad.yandex.ru/&quot;&gt;Школа анализа данных&lt;/a&gt; (Москва)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://compscicenter.ru/about&quot;&gt;Computer Science Center&lt;/a&gt; (Санкт Петербург)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://amse.ru/&quot;&gt;Академия современного программирования&lt;/a&gt; (Санкт Петербург)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 13 Jan 2015 00:00:00 +0500</pubDate>
+        <link>http://localhost:4000/2015/01/13/2-years-cs-curriculum.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/01/13/2-years-cs-curriculum.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
