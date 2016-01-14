@@ -6,8 +6,8 @@
 </description>
     <link>https://zaycev.github.io/</link>
     <atom:link href="https://zaycev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jan 2016 23:26:06 +0500</pubDate>
-    <lastBuildDate>Thu, 14 Jan 2016 23:26:06 +0500</lastBuildDate>
+    <pubDate>Thu, 14 Jan 2016 23:27:01 +0500</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 23:27:01 +0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -67,7 +67,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.geeksforgeeks.org&quot;&gt;GeeksforGeeks&lt;/a&gt; – на этом сайте собранны задачи с собеседований в разные крутые компании. Всегда акуально знать о том, что сейчас могут спросить на собеседовании в Google или Facebook.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://projecteuler.net&quot;&gt;ProjectEuler&lt;/a&gt; – сайт, на котором собраны разные абстрактные задачи (паззлы) по программированию с математическим уклоном. Хорошо научиться писать программы с помощью решения таких задач скорее всего не получится, но можно потренировать мозг или использовать как правильный полигон для освоения нового языка. Задачи упорядочены по возрастанию сложности начиная от совсем уж простых.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://projecteuler.net&quot;&gt;ProjectEuler&lt;/a&gt; – сайт, на котором собраны разные абстрактные задачи (паззлы) по программированию с математическим уклоном. Хорошо научиться писать программы с помощью решения таких задач скорее всего не получится, но можно потренировать мозг или использовать их как правильный полигон для освоения нового языка. Задачи упорядочены по возрастанию сложности начиная от совсем уж простых.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://code.google.com/codejam&quot;&gt;GoogleCodeJam&lt;/a&gt; - архив задач с решениями и анализом с соревнований по программированию от Google.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.topcoder.com&quot;&gt;Top Coder&lt;/a&gt; и &lt;a href=&quot;http://codeforces.com&quot;&gt;Codeforces.ru&lt;/a&gt; – почти тоже самое что и Code Jam - сайты для решение задач по спортивному программированию с онлайн рейтингами участников и прочим.&lt;/li&gt;
 &lt;/ul&gt;
