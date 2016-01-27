@@ -4,10 +4,10 @@
     <title>Vladimir Zaytsev</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>https://vladimir.io/</link>
-    <atom:link href="https://vladimir.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 12:26:17 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 12:26:17 -0800</lastBuildDate>
+    <link>https://zaycev.github.io/</link>
+    <atom:link href="https://zaycev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 27 Jan 2016 13:40:06 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 13:40:06 -0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -46,7 +46,7 @@
   &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/&quot;&gt;Coursera&lt;/a&gt; – наверное, самый крупный в мире проект по онлайн-обучению. Основан известным стэнфордским профессором &lt;a href=&quot;https://ru.wikipedia.org/wiki/Нг,_Эндрю&quot;&gt;Эндрю Нг&lt;/a&gt; (сейчас – исследователь в китайской поисковой компании Baidu). Некоторые курсы, такие как &lt;a href=&quot;https://www.coursera.org/course/cs101&quot;&gt;CS101&lt;/a&gt;, можно проходить на первом курсе университета.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://vladimir.io/assets/screen-coursera-1.png&quot; alt=&quot;Coursera&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://zaycev.github.io/assets/screen-coursera-1.png&quot; alt=&quot;Coursera&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/&quot;&gt;Khan Academy&lt;/a&gt; – сайт с видеолекциями, ориентированный больше на школьников чем на студентов. Очень известен и популярен на западе. Есть вводный &lt;a href=&quot;https://www.khanacademy.org/computing/computer-science/algorithms&quot;&gt;курс&lt;/a&gt;, обучающий программированию и Computer Science с помощью языка JavaScript. Проект несколько лет назад получил грант от фонда Мелинды и Била Гейтсов на 1 миллиард долларов.&lt;/li&gt;
@@ -63,7 +63,7 @@
   &lt;li&gt;&lt;a href=&quot;http://hackerrank.com/&quot;&gt;HackerRank&lt;/a&gt; – платформа для практики в компьютерных науках (алгоритмы, ии, машинное обучение и др.) и прикладной математике. Вы можете составить себе курс, а HackerRank создаст для вас тестовые задания под выбранный вами язык программирования. В платформу интегрирована среда для программирования и также есть статистика ваших результатов в сравнении с другими пользователями – около 1 миллиона программистов.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://vladimir.io/assets/screen-hrank-1.png&quot; alt=&quot;HackerRank&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://zaycev.github.io/assets/screen-hrank-1.png&quot; alt=&quot;HackerRank&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.geeksforgeeks.org&quot;&gt;GeeksforGeeks&lt;/a&gt; – на этом сайте собранны задачи с собеседований в разные крутые компании. Всегда акуально знать о том, что сейчас могут спросить на собеседовании в Google или Facebook.&lt;/li&gt;
@@ -92,7 +92,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://vladimir.io/assets/screen-hn-1.png&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://zaycev.github.io/assets/screen-hn-1.png&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -110,7 +110,7 @@
 
 &lt;h1 id=&quot;section-4&quot;&gt;В Чем Писать Код&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://vladimir.io/assets/screen-atom-editor.jpg&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://zaycev.github.io/assets/screen-atom-editor.jpg&quot; alt=&quot;HackerNews&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;В чем лучше всего писать код?&lt;/p&gt;
 
@@ -137,8 +137,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 13 Jan 2015 00:00:00 -0800</pubDate>
-        <link>https://vladimir.io/2015/01/13/2-years-cs-curriculum.html</link>
-        <guid isPermaLink="true">https://vladimir.io/2015/01/13/2-years-cs-curriculum.html</guid>
+        <link>https://zaycev.github.io/2015/01/13/2-years-cs-curriculum.html</link>
+        <guid isPermaLink="true">https://zaycev.github.io/2015/01/13/2-years-cs-curriculum.html</guid>
         
         
       </item>
