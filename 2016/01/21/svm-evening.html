@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  
+  
+
+  <title>[RU] Вечер с... SVM - Vladimir Zaytsev Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+
+  
+    <meta name="description" content="Метод опорных векторов (support vector machines, SVM &amp;lt;http://homepages.rpi.edu/~bennek/class/mmld/papers/svn.pdf&amp;gt;) - один из наиболее часто исп..." />
+    <meta property="og:description" content="Метод опорных векторов (support vector machines, SVM &amp;lt;http://homepages.rpi.edu/~bennek/class/mmld/papers/svn.pdf&amp;gt;) - один из наиболее часто исп..." />
+  
+
+  <meta property="og:title" content="[RU] Вечер с... SVM" />
+  <meta property="og:site_name" content="Vladimir Zaytsev Blog" />
+  <meta property="og:type" content="article" />
+
+  
+  
+    
+    <meta property="og:image" content="https://zaycev.github.io/images/post-laptop-coffee.jpg" />
+  
+
+  
+  <meta property="og:url" content="https://zaycev.github.io/2016/01/21/svm-evening.html" />
+
+  
+    <meta property="article:published_time" content="2016-01-21T00:00:00-08:00" />
+  
+  
+    <meta property="article:author" content="https://zaycev.github.io/about">
+  
+
+  
+    
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600|Lora:400,700&subset=latin,latin-ext" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/style.css">
+
+  <link rel="canonical" href="https://zaycev.github.io/2016/01/21/svm-evening.html">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Vladimir Zaytsev Blog" href="/feed.xml" />
+
+  
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47310787-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+</head>
+
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 class="site-title">
+        <a href="/">Vladimir Zaytsev Blog</a>
+      </h1>
+      
+  <button class="site-nav-toggle" aria-controls="site-nav" aria-expanded="false">
+    <span class="fa fa-bars" aria-hidden="true"></span>
+    <span class="visuallyhidden">Menu</span>
+  </button>
+
+
+    </div>
+    
+  <nav id="site-nav" class="site-nav" role="navigation" aria-expanded="false">
+    <ul class="site-nav-list">
+      
+        <li><a href="/">Posts</a></li>
+      
+        <li><a href="/about/">About Me</a></li>
+      
+    </ul>
+  </nav>
+
+
+  </header>
+
+  <main role="main">
+    
+
+<div class="container">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      
+        <div class="post-image">
+          <img src="/images/post-laptop-coffee.jpg" alt="" itemprop="image" />
+        </div>
+      
+      
+
+      <h1 class="post-title" itemprop="headline">[RU] Вечер с... SVM</h1>
+      <ul class="post-meta">
+        
+          <li class="post-author">
+            by
+            
+              <a href="https://zaycev.github.io/about">Vova Zaytsev</a>
+            
+          </li>
+        
+        <li class="post-date">
+          <time datetime="2016-01-21T00:00:00-08:00" itemprop="datePublished">
+            January 21, 2016
+          </time>
+        </li>
+        
+
+      </ul>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Метод опорных векторов (support vector machines, <code class="highlighter-rouge">SVM &lt;http://homepages.rpi.edu/~bennek/class/mmld/papers/svn.pdf&gt;</code><em>) - один из наиболее часто используемых в современном мире алгоритмов машинного обучения. SVM можно применять для многих прикладных задач: парсить текст на естественных языках, распозновать визуальные образы, определять части речи слов в тексте, делать кредитный скоринг, сортировать поисковую выдачу по релевантности и много всего другого интересного. Он позволяет решать как задачи классификации так и задачи регрессии. К тому же, с помощью правильно подобранной функции ядра (<code class="highlighter-rouge">kernel trick &lt;http://en.wikipedia.org/wiki/Kernel_trick&gt;</code></em>), позволяет строить нелинейные разделяющие плоскости, или приблежать нелинейные функции в случае регрессии. Что особенно важно, для него доказанны некоторые важные теоретические гарантии для моделей построенных методом SVM.</p>
+
+<p>Ниже, я постараюсь по шагам изложить базовую теорию лежащую в основе метода и привести его реализацию для конкретного случая (на языке Python и псевдокоде), стараясь, где можно, избежать лишнего использования греческих букв. Для этого мы напишем простой классификатор для распазнавания рукописных цифр – я выбрал эту задачу как одну из самых очевидных для восприятия и не требующую каких либо специфичных знаний о предметной области.</p>
+
+<h2 id="section">Введение</h2>
+
+<p>Представим что мы хотим получить такую систему которая бы могла распознавать цифры по их изображениям. Это может к примеру пригодиться для считывания индексов на почтовых конвертах, распознавании номеров на автомобилях или адресов на домах. Допустим, что у нас есть небольшой набор картинок с различными изображениями цифр и файл c ответами, где написано какая цифра находится на какой картинке. Теперь мы хотим чтобы имея эти данные – примеры c ответами, наша система как нибудь сама “научилась” читать цифры на картинках. Думаю, важно заметить что в мире существует огромное колличество самых разных изображений цифр, так что, наша система должна не просто запомнить что нарисовано на наших картинках, а скорее - вывести некоторые общие закономерности у одних и тех же цифр на разных изображениях. Давайте опишем задачу более формально.</p>
+
+<p>Набор картинок будем называть множеством $\{x_n\}$, а набор ответов множеством $\{y_n\}$. Картинки можно представить как избражения 16x16 пикселей, то есть вектора с 256 компонентами, где каждая компонента принимает значение от $0$ до $1$. Например, $0$ – это черный, $1$ – белый, а промежуточные значения – серый оттенки. Элементы множества $\{y_n\}$ (или по-другому <em>классы</em>), это просто целые числа от 0 до 9 соответвующие каждой арабской цифре.</p>
+
+<p>.. image:: {filename}/images/svm-tutorial_digit_recognition.png
+   :scale: 50 %
+   :align: center</p>
+
+<p>Строго говоря, мы хотим найти такую функцию $f(\cdot)$, которая по заданному $x \in X$, вычисляла бы значение $y$. При этом, как замеченно выше, нам интересно чтобы найденная функция могла хорошо работать не только с изображенниями из нашего набора, но и с другими изображениями цифр (на всем множесте картинок $X$). Иными словами, нам интересно чтобы система могла сделать какое-то обобщение от том как выглядят различные рукописные цифры на основе небольшой коллекции имеющихся у нас примеров различных цифр.</p>
+
+<p>Чтобы разобраться в том как применить SVM для этой задачи, нам для начала нужно взглянуть на базовую теорию, которая изложена в следующем разделе. Если вы уже знакомы с основными концепциями в машинном обучении, то этот раздел можно пропустить.</p>
+
+<h2 id="section-1">Подготовка</h2>
+
+<p>Давайте вкратце посмотрим на центральные понятия в машинном обучении, если вы хотите более глубоко изучить данную тему – обратитесь к ссылкам конце этой статьи. Для удобства, сначала предположим что у нас есть всего две цифры которые нужно научиться распознавать. Также, ответы соответвующие этим цифрам будут принимать значения $+1$ и $-1$, то есть $y \in \{+1, -1\}$.</p>
+
+<p>Некоторая терминология
+``````````````````````</p>
+
+<p>Обучающие данные (training data)
+	$N$ примеров: $D^{TRAIN}=\{(x_1, y_1), (x_2, y_2), \dots, (x_N, y_N)\}$. Эти данные нужны для того чтобы восстановить зависимость $f(\cdot)$ между переменными $x$ и $y$  (в нашей системе - изображения и цифры).</p>
+
+<p>Тестовые данные (test data)
+	$M$ примеров: $D^{TEST}=\{(x_1, y_1), (x_2, y_2), \dots, (x_M, y_M)\}$. Эти данные нужны для того чтобы проверить как хорошо $f(\cdot)$ определяет классы для $x \not\in D^{TRAIN}$, то есть как хорошо наша система распознает новые изображения, для которых она не знает правильных ответов.</p>
+
+<p>Решающая функция (classication rule):
+	$y = h(x)$, алгоритм или функция, приближающая $y$ на всем множестве $X$. Для SVM решающую функцию принято обозначать $h$, которая имеет следующий вид: $h(x) = SIGN(f(x))$, где $f(x)=w^T\phi(x) + b$.</p>
+
+<p>Функция потерь (loss function)
+	$l(f(x), y)$ – величина или цена ошибки классификатора на одном примере. Существует много разных функций потерь для различных задач, в нашем случае используется следующая функция потерь (Hinge Loss Function):</p>
+
+<p>\[
+l(f(x), y) =
+\begin{cases}
+0, &amp; \text{если $y\cdot f(x) \geqslant 1$;} \<br />
+1 - y\cdot f(x), &amp; \text{в противном случае.}
+\end{cases}
+\]</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Более короткая форма записи:
+</code></pre>
+</div>
+
+<script type="math/tex; mode=display">l^{HINGE}(f(x), y) = max(0, 1 - y\~f(x))</script>
+
+<p>Из формулы видно, что мы “платим” штраф 0 долларов, если наш ответ для $y$ совпадает с истинным значением по знаку и больше или равен ему по модулю. В противеном случае, заплатим тем больше, чем сильнее наш ответ отличается от истинного значения.</p>
+
+<p>.. image:: {filename}/images/svm-tutorial_hinge_loss.png
+   :align: center</p>
+
+<p>Теперь, допустим что вместо одной пары точек, у нас есть множество $\{x_n\}$ и $\{y_n\}$. В таком случае суммарное значение потерь на этом множестве будет:</p>
+
+<script type="math/tex; mode=display">L = \\sum\_n{max(0, 1 - y\_n\~f(x\_n))}</script>
+
+<script type="math/tex; mode=display">L(w) = \\sum\_n{max(0, 1 - y\_n [w^T \\phi(x\_n) + b])}</script>
+
+<p>Нашей задачей будет подобрать такие $w$ и $b$ чтобы суммарное значение потерь было как можно меньше на обучающем множестве, то есть ее нужно оптимизировать. Но для этого мы будем использовать немного другую формулу функции потерь:</p>
+
+<script type="math/tex; mode=display">L(w, \\lambda) = \\sum\_n{max(0, 1 - y\_n [w^T \\phi(x\_n) + b])} + \\frac{\\lambda}{2}||w||^2\_2</script>
+
+<p>Здесь $w$ и $b$ - параметры нашей решающей функции, называемые <em>моделью</em>. $\lambda$ - некоторый параметр <em>регуляризации</em>. Суть введения регуляризатора в том чтобы контролировать сложность модели – при больших значениях компонент вектора $w$, регуляризатор будет добавлять большие значения к функции потерь, что в итоге будет приводить к уменьшению или вовсе занулению некоторых коэфициэнтов в моделе. Изображение ниже хорошо иллюстрирует подобную ситуацию:</p>
+
+<p>.. image:: {filename}/images/svm-tutorial_overfitting.png
+   :width: 700
+   :align: center</p>
+
+<p>Модель <strong>срава</strong> сложнее и идеально предсказывает значения во всех обучающих точках. Модель <strong>слева</strong> проще, но делает это с некоторой ошибкой. В данном случае, для нас будет предпочтительнее модель слева, так как она очевидно лучше повторяет поведение функции которую нам нужно приблизить, хоть и делает некоторые ошибки на обучающей выборке.</p>
+
+<p>Итак, в итоге нашу задачу можно переформулировать следующим образом (напомню, что у нас пока только две цифры):</p>
+
+<p><script type="math/tex">D^{TRAIN}=\\{(x\_1, y\_1), (x\_2, y\_2), \\dots, (x\_N, y\_N)\\}</script>
+<script type="math/tex">\\underset{b,w}{\\text{min}}\\left(\\sum\_n{max(0, 1 - y\_n [w^T \\phi(x\_n) + b])} + \\frac{\\lambda}{2}||w||^2\_2\\right)</script></p>
+
+<h2 id="section-2">Минимизация функции потерь</h2>
+
+<p>Для начала перепишем функцию потерь:</p>
+
+<script type="math/tex; mode=display">C\\sum\_n{max(0, 1 - y\_n [w^T \\phi(x\_n) + b])} + \\frac{1}{2}||w||^2\_2</script>
+
+<p>Где $C = \frac{1}{\lambda}.\~$ Далее, сделаем замену $\xi_n=max(0, 1 - y_n [w^T \phi(x_n) + b])$:</p>
+
+<script type="math/tex; mode=display">\\underset{b,w,\\{\\xi\_n\\}}{\\text{min}}\~\~C\\sum\_n{\\xi\_n} + \\frac{1}{2}||w||^2\_2</script>
+
+<p>В итоге получем задачу которая еще называется <em>первичной постановкой SVM</em> (Primal Formulation of SVM):</p>
+
+<p><script type="math/tex">\\underset{b,w,\\{\\xi\_n\\}}{\\text{min}}\~\~C\\sum\_n{\\xi\_n} + \\frac{1}{2}||w||^2\_2</script>
+<script type="math/tex">1 - y\_n [w^T \\phi(x\_n) + b] \\le \\xi\_n,\~\~\\forall\~n</script>
+<script type="math/tex">\\xi\_n \\ge 0,\~\~\\forall\~n</script></p>
+
+<p>Можно заметить что это задача квадратичной оптимизации, так как целевая функция имеет степеь равную двойке и ограничения это лениейные неравенства относительно $w$, $b$ и $\xi_n$.</p>
+
+<p>Перепишем эту задачу в <code class="highlighter-rouge">двойственной &lt;http://en.wikipedia.org/wiki/Duality_(optimization)&gt;</code>_ форме:</p>
+
+<script type="math/tex; mode=display">\\underset{\\alpha}{\\text{max}}
+\\sum\_n{\\alpha\_n} -
+\\frac{1}{2}\\sum\_{m,n}y\_n y\_m \\alpha\_n \\alpha\_m \\phi(x\_m)^T \\phi(x\_n)</script>
+
+<script type="math/tex; mode=display">0 \\le \\alpha\_n \\le C,\~\~\\forall\~n</script>
+
+<script type="math/tex; mode=display">\\sum\_n \\alpha\_n y\_n = 0</script>
+
+<p>Снова заметим что это задача выпуклой оптимизации поскольку целевая функция вогнутая. Теперь мы имеем $N$ двойственных переменных $\alpha_n$, по одной для каждого оганичения $1 - y_n [w^T \phi(x_n) + b] \le \xi_n$ из первичной формы. Теперь заменим скалярное произведение базисных функций <code class="highlighter-rouge">функцией ядра &lt;http://en.wikipedia.org/wiki/Kernel_(statistics)&gt;</code>_:</p>
+
+<script type="math/tex; mode=display">\\underset{\\alpha}{\\text{max}}
+\\sum\_n{\\alpha\_n} -
+\\frac{1}{2}\\sum\_{m,n}y\_n y\_m \\alpha\_n \\alpha\_m k(x\_m, x\_n)</script>
+
+<script type="math/tex; mode=display">0 \\le \\alpha\_n \\le C,\~\~\\forall\~n</script>
+
+<script type="math/tex; mode=display">\\sum\_n \\alpha\_n y\_n = 0</script>
+
+<p>.. _MNIST: http://yann.lecun.com/exdb/mnist/</p>
+
+    </div>
+    <div class="share social-icons">
+      <h2 class="share-title">Share this:</h2>
+      
+      <a href="https://twitter.com/share?text=[RU]%20%D0%92%D0%B5%D1%87%D0%B5%D1%80%20%D1%81...%20SVM&amp;url=https://zaycev.github.io/2016/01/21/svm-evening.html"
+         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="visuallyhidden">Twitter</span>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://zaycev.github.io/2016/01/21/svm-evening.html"
+         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="visuallyhidden">Facebook</span>
+      </a>
+      <a href="https://plus.google.com/share?url=https://zaycev.github.io/2016/01/21/svm-evening.html"
+         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="visuallyhidden">Google+</span>
+      </a>
+    </div>
+
+  </article>
+
+  
+    <div class="author has-avatar">
+      
+        
+          <a href="https://zaycev.github.io/about" class="author-avatar" aria-hidden="true" style="background-image: url(/images/vova-zaytsev-avatar.jpg)"></a>
+        
+      
+      <h2 class="author-name">
+        
+          <a href="https://zaycev.github.io/about">Vova Zaytsev</a>
+        
+      </h2>
+      <p class="author-bio">ML and NLP engineer at A9</p>
+    </div>
+  
+
+  
+  <div id="disqus_thread"></div>
+  <script>
+      var disqus_shortname = 'znlp';
+      var disqus_url = 'https://zaycev.github.io/2016/01/21/svm-evening.html';
+      var disqus_identifier = disqus_url;
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+
+
+
+  <nav class="read-next clearfix">
+    
+    
+      <a class="read-next-older" href="/2015/01/13/2-years-cs-curriculum.html">[RU] Как начать изучать Computer Science первокурсникам</a>
+    
+  </nav>
+
+</div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    
+  <ul class="social-links social-icons">
+    
+      
+      
+      <li>
+        <a href="https://twitter.com/vladimirzaytsev">
+          <span class="visuallyhidden">Twitter</span>
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="https://www.facebook.com/vladimir.zaytsev">
+          <span class="visuallyhidden">Facebook</span>
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="https://github.com/zaycev">
+          <span class="visuallyhidden">Github</span>
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="http://instagram.com/metanerd">
+          <span class="visuallyhidden">Instagram</span>
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/in/vladimir-zaytsev-10632a2b">
+          <span class="visuallyhidden">LinkedIn</span>
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="mailto:zaytsev@usc.edu">
+          <span class="visuallyhidden">Email</span>
+        </a>
+      </li>
+    
+  </ul>
+
+
+    <div class="container">
+      © 2016 Vladimir Zaytsev Blog
+    </div>
+  </footer>
+
+  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+  <script>
+    var $siteNav = $('#site-nav');
+    var $siteNavToggle = $('.site-nav-toggle');
+    var $siteNavToggleIcon = $('.site-nav-toggle .fa');
+
+    $siteNavToggle.click(function () {
+      $siteNav.toggleClass('is-toggled');
+      $siteNavToggleIcon.toggleClass('fa-times').toggleClass('fa-bars');
+      if ($siteNav.hasClass('is-toggled')) {
+        $siteNav.attr('aria-expanded', true);
+        $siteNavToggle.attr('aria-expanded', true);
+      } else {
+        $siteNav.attr('aria-expanded', 'false');
+        $siteNavToggle.attr('aria-expanded', 'false');
+      }
+    });
+
+    $('.post-content').fitVids();
+  </script>
+
+</body>
+</html>
