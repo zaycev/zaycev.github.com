@@ -6,9 +6,43 @@
 </description>
     <link>https://zaycev.github.io/</link>
     <atom:link href="https://zaycev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 13:40:06 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 13:40:06 -0800</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Sun, 05 Jun 2016 20:12:37 -0700</pubDate>
+    <lastBuildDate>Sun, 05 Jun 2016 20:12:37 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Sausalito</title>
+        <description>&lt;p&gt;Short video from our Memorial day hike to Sausalito.&lt;/p&gt;
+
+&lt;iframe width=&quot;500&quot; height=&quot;281&quot; src=&quot;http://player.vimeo.com/video/169408544 &quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Music: Nicolas Jaar - Mi Mujer, William Coulter – Jefferson and Liberty.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
+        <link>https://zaycev.github.io/films/2016/05/29/sausalito.html</link>
+        <guid isPermaLink="true">https://zaycev.github.io/films/2016/05/29/sausalito.html</guid>
+        
+        
+        <category>films</category>
+        
+      </item>
+    
+      <item>
+        <title>Ocean Beach</title>
+        <description>&lt;p&gt;Filmed Peter and Vladimir on Ocean Beach.&lt;/p&gt;
+
+&lt;iframe width=&quot;500&quot; height=&quot;281&quot; src=&quot;http://player.vimeo.com/video/168533198 &quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Music: Sun Araw - Horse Steppin. Shot on Blackmagic pocket cinema camera with Lumix 12-35mm lens.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 28 May 2016 00:00:00 -0700</pubDate>
+        <link>https://zaycev.github.io/films/2016/05/28/ocean-beach.html</link>
+        <guid isPermaLink="true">https://zaycev.github.io/films/2016/05/28/ocean-beach.html</guid>
+        
+        
+        <category>films</category>
+        
+      </item>
     
       <item>
         <title>[RU] Как начать изучать Computer Science первокурсникам</title>
